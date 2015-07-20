@@ -20,12 +20,12 @@ namespace vercodebulktest.Controllers
         }
 
 
-        public object Post([FromBody] string requestString)
+        public object Post([FromBody] AppsRequestModel request)
         {
             try
             {
-                var jsonSerializer = new JavaScriptSerializer();
-                var request = (AppsRequestModel)jsonSerializer.Deserialize(requestString, typeof(AppsRequestModel));
+             //   var jsonSerializer = new JavaScriptSerializer();
+               // var request = (AppsRequestModel)jsonSerializer.Deserialize(requestString, typeof(AppsRequestModel));
                 var biz = new AppBusiness();
                 var result = biz.GetAppScanResult(request);
                 return Request.CreateResponse(HttpStatusCode.OK, result);
