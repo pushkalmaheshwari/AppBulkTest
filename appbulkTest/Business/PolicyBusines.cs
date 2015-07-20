@@ -27,8 +27,10 @@ namespace vercodebulktest.Business
                 var affectedApps = new AppScanPolicyAppEntity();
                 affectedApps.platform = "ios";
                 affectedApps.count = 10;
-                
+
                 policyentity.affectedApps.Add(affectedApps);
+
+                policyentity.affectedApps.Add(new AppScanPolicyAppEntity() { platform = "android", count = 10 });
 
                 listOfPolicies.policies.Add(policyentity);
             }
