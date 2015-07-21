@@ -30,7 +30,7 @@ namespace vercodebulktest.Business
 
                 policyentity.affectedApps.Add(affectedApps);
 
-                policyentity.affectedApps.Add(new AppScanPolicyAppEntity() { platform = "android", count = 10 });
+                policyentity.affectedApps.Add(new AppScanPolicyAppEntity() { platform = "android", count = 11 });
 
                 listOfPolicies.policies.Add(policyentity);
             }
