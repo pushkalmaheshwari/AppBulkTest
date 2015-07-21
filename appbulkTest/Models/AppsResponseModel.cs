@@ -61,7 +61,7 @@ namespace vercodebulktest.Models
     {
         public ThirdPartyAppResponse():base()
         {
-            blacklist = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9" ,"10"};
+            blacklist = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9" ,"10","11"};
             scanned = true;
         }
 
