@@ -10,11 +10,10 @@ namespace vercodebulktest.Business
     public class PolicyBusines
     {
         const int Vendorid = 2;
-        public object GetAllPolicies()
+        public PolicyResponseModel GetAllPolicies()
         {
             
-            var listOfPolicies = new  PolicyResponseModel();
-            listOfPolicies.LastSyncIdentifier = DateTime.UtcNow.Ticks;
+            var listOfPolicies = new  PolicyResponseModel {LastSyncIdentifier = DateTime.UtcNow.Ticks};
 
             for(int count =1;count<=11;count++)
             {
@@ -26,7 +25,7 @@ namespace vercodebulktest.Business
 
                 var affectedApps = new AppScanPolicyAppEntity();
                 affectedApps.platform = "ios";
-                affectedApps.count = 14;
+                affectedApps.count = 13;
 
                 policyentity.affectedApps.Add(affectedApps);
 

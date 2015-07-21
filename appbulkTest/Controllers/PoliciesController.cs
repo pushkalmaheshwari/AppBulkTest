@@ -6,13 +6,14 @@ using System.Net.Http;
 using System.Web.Http;
 using AppScanThirdPartyIntegration;
 using vercodebulktest.Business;
+using vercodebulktest.Models;
 
 namespace vercodebulktest.Controllers
 {
     public class PoliciesController : ApiController
     {
 
-        public object Get()
+        public PolicyResponseModel Get()
         {
             var biz = new PolicyBusines();
             return biz.GetAllPolicies();
