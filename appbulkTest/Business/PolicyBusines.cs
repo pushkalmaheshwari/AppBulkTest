@@ -16,7 +16,7 @@ namespace vercodebulktest.Business
             var listOfPolicies = new  PolicyResponseModel();
             listOfPolicies.LastSyncIdentifier = DateTime.UtcNow.Ticks;
 
-            for(int count =1;count<=10;count++)
+            for(int count =1;count<=11;count++)
             {
 
                 var policyentity = new AppScanPolicyEntity();
@@ -26,7 +26,7 @@ namespace vercodebulktest.Business
 
                 var affectedApps = new AppScanPolicyAppEntity();
                 affectedApps.platform = "ios";
-                affectedApps.count = 10;
+                affectedApps.count = 11;
 
                 policyentity.affectedApps.Add(affectedApps);
 
