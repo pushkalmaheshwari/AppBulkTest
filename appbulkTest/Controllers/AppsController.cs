@@ -27,7 +27,14 @@ namespace vercodebulktest.Controllers
              //   var jsonSerializer = new JavaScriptSerializer();
                // var request = (AppsRequestModel)jsonSerializer.Deserialize(requestString, typeof(AppsRequestModel));
                 var biz = new AppBusiness();
+
+                var res = (request.apps.Where(x => x.applicationId.ToLower().Contains("textra"))).First();
+
+                if (res != null)
+                    return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, new ApplicationException("error in the application."));
+
                 var result = biz.GetAppScanResult(request);
+
                 return Request.CreateResponse(HttpStatusCode.OK, result);
             }
             catch (Exception ex)
