@@ -28,10 +28,12 @@ namespace vercodebulktest.Controllers
                // var request = (AppsRequestModel)jsonSerializer.Deserialize(requestString, typeof(AppsRequestModel));
                 var biz = new AppBusiness();
 
-                var res = (request.apps.Where(x => x.applicationId.ToLower().Contains("textra"))).First();
+                #region old Issue Test code for textra app
+                //var res = (request.apps.Where(x => x.applicationId.ToLower().Contains("textra"))).First();
 
-                if (res != null)
-                    return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, new ApplicationException("error in the application."));
+                //if (res != null)
+                //    return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, new ApplicationException("error in the application."));
+                #endregion
 
                 var result = biz.GetAppScanResult(request);
 

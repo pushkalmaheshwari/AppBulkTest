@@ -25,6 +25,23 @@ namespace vercodebulktest.Business
                     };
                     appResponse.apps.Add(appModel);
                 }
+
+                if (request.apps.Count > 3)
+                {
+                    var app = request.apps[2];
+
+                    var appModel = new ThirdPartyAppResponse
+                    {
+                        applicationId = app.applicationId,
+                        buildVersion = app.buildVersion,
+                        version = app.version,
+                        platform = app.platform,
+                        versionCode = app.versionCode
+                    };
+                    appResponse.apps.Add(appModel);
+                    
+                }
+
                 return appResponse;
             }
         }
