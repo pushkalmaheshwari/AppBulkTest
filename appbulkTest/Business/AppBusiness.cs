@@ -26,9 +26,9 @@ namespace vercodebulktest.Business
                     appResponse.apps.Add(appModel);
                 }
 
-                if (request.apps.Count > 3)
+                if (request.apps.Count > 1)
                 {
-                    var app = request.apps[2];
+                    var app = request.apps[0];
 
                     var appModel = new ThirdPartyAppResponse
                     {
